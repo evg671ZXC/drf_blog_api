@@ -7,8 +7,8 @@ dist/
 wheels/
 *.egg-info
 *ruff_cache
-static/*
-!static/.gitkeep
+static
+!static/*.gitkeep
 
 # Virtual environments
 .venv
