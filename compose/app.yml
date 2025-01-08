@@ -1,0 +1,25 @@
+services:
+  main-app:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    container_name: main-app
+    ports: 
+      - "${DJANGO_PORT}:8000"
+    command: "sh /entrypoint.sh"
+    env_file:
+      - ../.env
+    depends_on:
+      - postgres
+    volumes:
+      - ..:/app/
+  
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: ngx
+    ports:
+      - "8080:80"
+    volumes:
+      - ../nginx:/etc/nginx/conf.d
+    depends_on:
+      - main-app

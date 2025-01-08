@@ -1,11 +1,15 @@
 # Python-generated files
 __pycache__/
 *.py[oc]
+.vscode
 build/
 dist/
 wheels/
 *.egg-info
 *ruff_cache
+static/*
+!static/.gitkeep
 
 # Virtual environments
 .venv
+.env

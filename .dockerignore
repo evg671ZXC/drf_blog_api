@@ -1,0 +1,7 @@
+__pycache__
+.cache
+.ruff_cache
+compose/
+*.pyc
+.venv
+.vscode
